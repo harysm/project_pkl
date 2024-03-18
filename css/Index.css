@@ -1,0 +1,581 @@
+/*---------------------------------- system ------------------------------------*/
+:root {
+	--pink: #f14e95;
+	--bg: #0a0a0a;
+	--shadow:0 2px 2px rgb(0 0 0 / 0.5);
+    --bg: #2C3333;
+    --bg-1:rgb(220, 220, 220);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+    background-color: var(--bg-1);
+}
+i{
+    font-size: 1.5rem;
+}
+/*---------------------------------- Scroll bar ------------------------------------*/
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+
+}
+::-webkit-scrollbar-thumb:hover {
+    background:transparent;
+} 
+
+/*---------------------------------- Preload ------------------------------------*/
+
+
+.loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #00e5ff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*-------------- footer --------------*/
+
+.footer{
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 60px;
+
+}
+
+/*---------------------------------- Navbar ------------------------------------*/
+header {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.626);
+}
+
+header .brand {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: "Quicksand";
+}
+
+header .navigation {
+    position: relative;
+}
+
+header .navigation .navigation-items a{
+    position: relative;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.5s ease;
+    font-family: "Josefin Sans";
+}
+
+header .navigation .navigation-items a:before{
+content: '';
+position: absolute;
+background: #ffffff;
+width: 0;
+height: 3px;
+bottom: -5px;
+left: 0;
+border-radius: 10px;
+transition: 0.5s ease;
+
+}
+
+header .navigation .navigation-items a:hover:before{
+width: 100%;
+
+}
+
+
+
+
+
+
+/*---------------------------------- Home ------------------------------------*/
+
+
+
+.home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 100px 200px;
+
+}
+
+.home:before {
+    z-index: 777;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.home video {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 000;
+    top: 0;
+    left: 0;
+}
+
+.home .content {
+    z-index: 888;
+    color: #fff;
+    width: 75%;
+    margin-top: 50px;
+}
+
+.home .content h1{
+font-size: 4em;
+font-weight: 900;
+text-transform: uppercase;
+letter-spacing:  5px;
+line-height: 75px;
+margin-bottom: 40px;
+font-family: "Quicksand";
+}
+
+.home .content p {
+    margin-bottom: 65px;
+}
+
+.home .content a {
+    background: #fff;
+    padding: 13px 30px;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.4s ease;
+}
+
+.home .content a:hover {
+    color: white;
+    background-color: #000;
+    transition: 0.4s ease;
+    
+}
+
+/*---------------------------------- Team ------------------------------------*/
+
+.team {
+    padding: 5rem 0 5rem 0;
+    width: 100%;
+    height: 100vh;
+}
+.team h1 {
+	font-size: 3.5rem;
+	font-family: "Abel";
+	text-align: center;
+	margin-bottom: 10vh;
+    
+}
+
+.team .card {
+	width: 260px;
+	padding: 0 0 0 0;
+	margin: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 25px 40px;
+	transition: 0.4s ease;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+.team .card:hover {
+	border: 1px solid #000000;
+	cursor: pointer;
+	transition: 0.4s ease;
+	transform: scale(1.2);
+	box-shadow: none;
+
+}
+.team .card-title {
+	font-size: 1.2rem;
+    font-family: "Plus Jakarta Sans";
+}
+.team .card-text{
+	font-size: 0.9rem;
+    font-family: "Acme";
+}
+
+.team img {
+	opacity: 100%;
+	margin-bottom: -30px;
+
+}
+
+.team a {
+    padding: 5px 10px;
+    background: linear-gradient(to right, #fff56f, #fb00ff);
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: rgb(255, 255, 255);
+    transition: 0.4s ease;
+}
+
+.team a:hover{
+    color: rgb(0, 0, 0);
+    background: linear-gradient(to right, #fff56f, #fb00ff);
+    transition: 0.4s ease;
+    padding: 5px 100px ;
+}
+
+.team p {
+    font-size: 1rem;
+
+}
+
+/*---------------------------------- pkl ------------------------------------*/
+.pkl {
+    padding: 5rem 2rem 5rem 2rem;
+    width: 100%;
+    height: 100vh;
+    background: url(../img/mastertindo.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.pkl .container {
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.329);
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+    text-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.pkl h1 {
+	font-size: 3.5rem;
+	font-family: "Abel";
+	text-align: center;
+	
+    color:white;
+}
+
+.pkl h3 {
+    font-size: 2.5rem;
+    font-family: "Abel";
+    margin-bottom: 10vh;
+    color: white;
+}
+
+.pkl p {
+    font-size: 1.2rem;
+    color: black;
+    flex-wrap: wrap;
+}
+
+/*---------------------------------- port ------------------------------------*/
+
+.port {
+    padding: 5rem 0 5rem 0;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+
+
+.port h1 {
+	font-size: 3.5rem;
+	font-family: "Abel";
+	text-align: center;
+    color:black;
+}
+
+.port .card {
+	width: 260px;
+	padding: 0 0 0 0;
+	margin: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 25px 40px;
+	transition: 0.4s ease;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.port .card:hover {
+	border: 1px solid #000000;
+	cursor: pointer;
+	transition: 0.4s ease;
+	transform: scale(1.2);
+
+}
+.port .card-title {
+	font-size: 1.2rem;
+    font-family: "Plus Jakarta Sans";
+}
+.port .card-text{
+	font-size: 0.9rem;
+    font-family: "Acme";
+}
+
+.port img {
+	opacity: 100%;
+	margin-bottom: -30px;
+
+}
+
+.port a {
+    padding: 5px 30px ;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    font-family: "Quicksand";
+    color: black;
+    background-color: #c3c3c3;
+    text-decoration: none;
+    transition: 0.4s ease;
+}
+
+.port a:hover{
+    color: white;
+    background-color: #000000;
+    transition: 0.4s ease;
+    padding: 5px 100px;
+}
+
+
+
+
+
+/*---------------------------------- pkl ------------------------------------*/
+
+.foto {
+    padding: 5rem 0 5rem 0;
+    width: 100%;
+    height: auto
+    
+
+    
+}
+
+.foto .container {
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.329);
+    padding: 0.5rem 1rem;
+}
+.foto h1 {
+	font-size: 3.5rem;
+	font-family: "Abel";
+	text-align: center;
+    color:black;
+}
+
+.foto .header {
+    text-align: center;
+    padding: 32px;
+  }
+  
+  .foto   .row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .foto   .column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .foto   .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  .foto   .column video {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+
+
+
+
+
+
+
+
+/*---------------------------------- Responsive ------------------------------------*/
+
+
+@media (max-width: 1440px) {
+    .team {
+        height: auto;
+    }
+    .pkl {
+        height: auto;
+    }
+    .port {
+        height: auto;
+    }
+    
+}
+@media (max-width: 1040px) {
+    header {
+        padding: 12px 20px;
+    }
+    .home {
+        padding: 100px 20px;
+    }
+    .home .media-icons {
+        right: 15px;
+    }
+
+    header .navigation {
+        display: none;
+    }
+    header .navigation.active {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rbga(1, 1, 1, 0.5);
+    }
+    header .navigation .navigation-items a{
+        color: #222;
+        font-size: 1.2em;
+        margin: 20px;
+    }
+    header .navigation .navigation-items a:before {
+        background: #222;
+        height: 5px;
+    }
+    header .navigation.active .navigation-items {
+        background-color: #ffffff9c;
+        width: 400px;
+        max-width: 600px;
+        margin: 20px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+        border: none;
+        backdrop-filter: blur(20px);
+    }
+    .menu-btn {
+        background: url(../img/icon/open.png)no-repeat;
+        background-size: 30px;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.5s ease;
+    }
+    .menu-btn.active {
+        z-index: 999;
+        background: url(../img/icon/close.png)no-repeat;
+        background-size: 25px;
+        background-position: center;
+        transition: 0.5s ease;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .foto .column {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+    }
+    .pkl {
+        padding: 5rem 0 5rem 0;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .foto .column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+
+
+
+
+
